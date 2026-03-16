@@ -8,20 +8,25 @@ public class PlayerShooter : MonoBehaviour
 
     public float shootForce = 10f;
     public float spin = 0f;
+    float addSpin = 0.1f;
+    float addForce = 5f;
+
 
     void Update()
     {
-        if (Keyboard.current.wKey.wasPressedThisFrame)
-            shootForce += 1;
+        // W/S hold to increase/decrease force over time
+        if (Keyboard.current.wKey.isPressed)
+            shootForce += addForce * Time.deltaTime;
 
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-            shootForce = Mathf.Max(0, shootForce - 1);
+        if (Keyboard.current.sKey.isPressed)
+            shootForce = Mathf.Max(0, shootForce - addForce * Time.deltaTime);
 
-        if (Keyboard.current.qKey.wasPressedThisFrame)
-            spin += 0.1f;
+        // E/Q hold to adjust spin over time
+        if (Keyboard.current.eKey.isPressed)
+            spin += addSpin * Time.deltaTime;
 
-        if (Keyboard.current.eKey.wasPressedThisFrame)
-            spin -= 0.1f;
+        if (Keyboard.current.qKey.isPressed)
+            spin -= addSpin * Time.deltaTime;
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
             Shoot();

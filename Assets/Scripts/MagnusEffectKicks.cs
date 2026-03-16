@@ -40,11 +40,8 @@ public class MagnusEffectKicks : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.2f);
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
+    
 }
