@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject replacePrefab; // น่องไก่
-    public float bounceForce = 5f;
+    public GameObject replacePrefab;   // น่องไก่
+    public GameObject smokeEffect;     // ควัน
+    public float destroyDelay = 0.5f;
 
     Rigidbody rb;
     bool isHit = false;
@@ -21,15 +22,28 @@ public class Enemy : MonoBehaviour
         {
             isHit = true;
 
-            // เด้งขึ้น
+            // เปิดฟิสิกส์
             rb.isKinematic = false;
-            rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+            rb.useGravity = true;
 
-            // Spawn น่องไก่
-            Instantiate(replacePrefab, transform.position, Quaternion.identity);
+            // รับแรงจากกระสุน
+            Rigidbody bulletRb = collision.gameObject.GetComponent<Rigidbody>();
+            if (bulletRb != null)
+            {
+                rb.AddForce(bulletRb.linearVelocity * 0.5f, ForceMode.Impulse);
+            }
 
-            // ลบไก่
-            Destroy(gameObject, 0.3f);
+            // เอฟเฟคควัน
+            Instantiate(smokeEffect, transform.position, Quaternion.identity);
+
+            // แปลงร่างหลังจากกระเด็น
+            Invoke("TransformToMeat", destroyDelay);
         }
+    }
+
+    void TransformToMeat()
+    {
+        Instantiate(replacePrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

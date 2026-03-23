@@ -3422,7 +3422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   replacePrefab: {fileID: 2028404821}
-  bounceForce: 5
+  smokeEffect: {fileID: 5687822989644843800, guid: 1ec395baa4343814faf5de2275fe6bff, type: 3}
 --- !u!1 &1657703053
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,6 +4520,7 @@ GameObject:
   - component: {fileID: 2028404824}
   - component: {fileID: 2028404823}
   - component: {fileID: 2028404822}
+  - component: {fileID: 2028404826}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -4622,6 +4623,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!54 &2028404826
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028404821}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &2067766330
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,15 +5132,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1980813088835798473, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.34
+      value: 1.6865416
       objectReference: {fileID: 0}
     - target: {fileID: 1980813088835798473, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.53
+      value: 6.09
       objectReference: {fileID: 0}
     - target: {fileID: 1980813088835798473, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.53
+      value: 2.7916048
       objectReference: {fileID: 0}
     - target: {fileID: 1980813088835798473, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
       propertyPath: m_LocalRotation.w
