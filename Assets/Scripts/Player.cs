@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
         
         Vector3 pos = rb.position;
-        pos.x = Mathf.Clamp(pos.x, -10f, 10f);
+        pos.x = Mathf.Clamp(pos.x, -13f, 13f);
         rb.MovePosition(pos);
 
         
