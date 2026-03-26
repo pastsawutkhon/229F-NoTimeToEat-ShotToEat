@@ -183,6 +183,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1980813088835798473, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
@@ -211,6 +212,12 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -2014698503841005554, guid: 605d0caffe3b2fe489bc37e772cb7496, type: 3}
+=======
+    - target: {fileID: 5188290646934941477, guid: a8df417f017f4bc4ea60679835ada1b3, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> ad004bcecd7d656aab8c13db5d942ff5bd90021a
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
